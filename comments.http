@@ -1,0 +1,12 @@
+### Get all comments
+GET localhost:8080/comments
+Accept: application/json
+
+### Create a new comment
+POST localhost:8080/comments
+
+{
+    "author": "John Doe",
+    "content": "This is a comment",
+    "created": "1970-01-01T00:00:00Z"
+}
