@@ -59,6 +59,9 @@ func handleComments(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	writer.Header().Set("Access-Control-Allow-Origin", "*")
+	writer.Header().Set("Access-Control-Allow-Headers", "*")
+
 	switch request.Method {
 	case http.MethodGet:
 		writer.Header().Set("Content-Type", "application/json")
