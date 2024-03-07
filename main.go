@@ -94,6 +94,13 @@ func handleComments(writer http.ResponseWriter, request *http.Request) {
 func main() {
 	http.HandleFunc("/comments", handleComments)
 
+	http.HandleFunc("/slides", func(writer http.ResponseWriter, request *http.Request) {
+		http.Redirect(writer, request,
+			"https://docs.google.com/presentation/d/1Y5bDlnVyX_L36x1M0qfs8Y1EbV68_ijIyb-4otr_wkQ/edit?usp=sharing",
+			http.StatusFound,
+		)
+	})
+
 	log.Println("Listening on :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
