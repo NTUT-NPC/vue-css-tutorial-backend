@@ -16,7 +16,7 @@ type Comment struct {
 
 type Comments []Comment
 
-const commentsFile = "comments.json"
+const commentsFile = "data/comments.json"
 
 func loadComments() (Comments, error) {
 	if _, err := os.Stat(commentsFile); os.IsNotExist(err) {
